@@ -21,4 +21,5 @@ public class Apple extends BaseAutoIdEntity {
     private String color;
     private BigDecimal weight;
     private BigDecimal price;
+    private String origin;
 }
