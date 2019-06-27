@@ -39,4 +39,17 @@ public class StreamDemoApplicationTests {
         );
     }
 
+    @Test
+    public void getAppleOriginByColor() {
+        List a = appleStore.stream().filter(apple -> apple.getColor().equals("red")).map(apple -> apple.getOrigin()).collect(Collectors.toList());
+        LOGGER.info(a.toString());
+    }
+
+    @Test
+    public void getAppleOriginStringByColor() {
+       String a = appleStore.stream().filter(apple -> apple.getColor().equals("red")).map(apple -> apple.getOrigin())
+               .collect(Collectors.joining("," , "(" ,")"));
+        LOGGER.info(a.toString());
+    }
+
 }
